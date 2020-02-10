@@ -18,7 +18,7 @@ Secure File Transfer Protocol (SSH File Transfer Protocol) is a network protocol
 
 ## **Deploy SFTP micro service**
 
-As a first step we are going to deploy the SFTP micro service on Kubernetes. Please refer [here](/sftp.yaml) to see the SFTP application yaml.
+As a first step we are going to deploy the SFTP micro service on Kubernetes. Please refer [here](sftp.yaml) to see the SFTP application yaml.
 SFTP yaml contains service and deployment kinds which runs on namespace called ```sftp```. Service is exposed on port 22. Deployment section contains an ```arg``` field which is used for setting up username and password. We can even securely set password for SFTP container by using ```env PASSWORD```.
 
 ![](./images/VolumeMount.png)
