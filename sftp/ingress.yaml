@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sftp-ingress
+  annotations:
+   kubernetes.io/ingress.class: "sftp"
+   ingress.citrix.com/frontend-ip: "10.102.169.210"
+   ingress.citrix.com/insecure-port: "22"
+   ingress.citrix.com/insecure-service-type: "tcp"
+   ingress.citrix.com/monitor: '{"sftp":{"type":"USER", "scriptname":"nssftp.pl", "scriptargs":"file=/sftp/incoming/test.log;user=admin;password=admin"}}'
+spec:
+  backend:
+     serviceName: sftp
+     servicePort: 22
