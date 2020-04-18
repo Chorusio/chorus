@@ -1,6 +1,6 @@
 # **Citrix CPX and Ingress Controller** 
 
-Citrix CPX is a container based ADC which can be used for load balancing or exposes routes from outside the k8s cluster to services within the k8s cluster. Citrix Ingress controller is a micro service which runs on a Kubernetes cluster and pick up the ingress and configure the appropriates routes on Citrix CPX. Citrix ADC has many form factor which include SDX, MPX, VPX, CPX and BLX. This section talks about how to use Citrix CPX, Citrix ingress controller and expose application routes to CPX via Citrix Ingress controller.  
+Citrix CPX is a container based ADC which can be used for load balancing or exposes routes from outside the k8s cluster to services within the k8s cluster. Citrix Ingress controller is a micro service which runs on a Kubernetes cluster and pick up the ingress and configure the appropriates routes on Citrix CPX. Citrix ADC has many form factor which include SDX, MPX, VPX, CPX and BLX. This section talks about how to use Citrix CPX, Citrix ingress controller and expose application routes to CPX via Citrix Ingress controller. Citrix has CPX with builtin ingress controller we are using that form factor here.
 
 ## **Who should read this?**
 
@@ -17,11 +17,27 @@ Citrix CPX is a container based ADC which can be used for load balancing or expo
 
 ## **Deploy guestbook application**
 
-    kubectl apply -f https://raw.githubusercontent.com/janraj/Networking/master/dsr/KubernetesConfig/guestbook-all-in-one.yaml
+First we can deploy the application on a kubernetes cluster.
+
+```
+    kubectl apply -f https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/controller/apps/guestbook-all-in-one.yaml
+```
 
 ## **Deploy CPX**
-    
-    kubectl apply -f https://raw.githubusercontent.com/janraj/Networking/master/dsr/KubernetesConfig/citrix-k8s-cpx-ingress.yml 
+
+Deploy the CPX with builtin ingress controller as a pod in the cluster.
+
+```    
+    kubectl apply -f https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/controller/citrix/citrix-k8s-cpx-ingress.yml
+```
+
+## **Verify the states of APPS and CPX**
+
+Check the states of CPX and guest book application which we have deployed using 
+```
+ kubectl get pods
+```
+will get the output like following.
 
 ## **Expose guestbook application using ingress resource**
 
