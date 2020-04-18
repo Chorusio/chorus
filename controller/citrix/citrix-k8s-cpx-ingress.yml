@@ -124,8 +124,7 @@ spec:
           imagePullPolicy: Always
       volumes:
       - name: cpx-volume1
-        configMap:
-           name: cpx-config
+        emptyDir: {}
       - name: cpx-volume2
         emptyDir: {}
 ---
