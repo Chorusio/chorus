@@ -1,53 +1,39 @@
 # **Citrix CPX and Ingress Controller** 
 
-Citrix CPX can be used for loadbalancing or exposes routes from outside the cluster to services within the cluster. Citrix Ingress controller is micro service which runs on kubernetes cluster and pick up the ingress and configure the appropriates routes/loadbalnce algorithms in Citrix CPX. Citrix ADC has many form factor which include SDX, MPX, VPX, CPX and BLX. CPX is freely available for education/experiment purpuse with limited bandwidth. This section talks about how to use Citrix CPX, Citrix ingress controller and expose aplication routes to CPX via Citrix Ingress controller.  
+Citrix CPX is a container based ADC which can be used for load balancing or exposes routes from outside the k8s cluster to services within the k8s cluster. Citrix Ingress controller is a micro service which runs on a Kubernetes cluster and pick up the ingress and configure the appropriates routes on Citrix CPX. Citrix ADC has many form factor which include SDX, MPX, VPX, CPX and BLX. This section talks about how to use Citrix CPX, Citrix ingress controller and expose application routes to CPX via Citrix Ingress controller.  
 
 ## **Who should read this?**
 
 1. If you want to setup a micro service on a Kubernetes and want to create route using citrix ingress controller.
-2. If you want to validate citrix ingress controller and citrix adc (CPX).
-3. If you want to understand kubernetes ingress concepts.
+2. If you want to validate Citrix ingress controller and Citrix ADC (CPX).
+3. If you want to understand Kubernetes ingress concepts.
  
 ## **This Section contains**
 
-1. Deploy a micro service on a Kubernetes cluster  
+1. Deploy an application on Kubernetes cluster  
 2. Citrix ADC as Ingress Device 
 3. Access the  application.
 4. Why Citrix ADC is better choice for loadbalancing?
 
-## **Deploy guestbook micro service**
+## **Deploy guestbook application**
 
+    kubectl apply -f https://raw.githubusercontent.com/janraj/Networking/master/dsr/KubernetesConfig/guestbook-all-in-one.yaml
 
-## **Citrix ADC to route the traffic to SFTP service**
+## **Deploy CPX**
+    
+    kubectl apply -f https://raw.githubusercontent.com/janraj/Networking/master/dsr/KubernetesConfig/citrix-k8s-cpx-ingress.yml 
 
-Now your SFTP service is up and running. Next step is to expose this application for users. 
-Citrix ADC is being used here to route the traffic to the SFTP service.
+## **Expose guestbook application using ingress resource**
 
-1. Create an ingress for the sftp application.
+Now your guestbook application is up and running. Next step is to expose this application for users. 
+Citrix ADC is being used here to route the traffic to the guestbook service. Citrix CPX is running as POD in Kubernetes cluster. 
+
+1. Create an ingress for the guestbook application.
    1. Download the ingress yaml.
       ```
-       wget https://raw.githubusercontent.com/janraj/Networking/master/sftp/ingress.yaml
+      kubectl apply -f  https://raw.githubusercontent.com/janraj/Networking/master/sftp/ingress.yaml
       ```
-   2. Citrix Ingress controller uses following annotations to configure the Citrix ADC.
-      ![](./images/Ingress.png)
-      Set the ```ingress.citrix.com/frontend-ip``` with the IP which you want to use for exposing SFTP service.
-      Set the username, password and file name on ```ingress.citrix.com/monitor```.
-   
-   3. Deploy the updated ingress.
-      ```
-      kubectl create -f ingress.yaml -n sftp
-      ```
-2. Deploy Citrix Ingress controller to configure the Citrix ADC.
-     1. Download the citrix ingress controller using
-        ```
-          wget https://raw.githubusercontent.com/citrix/citrix-k8s-ingress-controller/master/deployment/baremetal/citrix-k8s-ingress-controller.yaml
-        ```
-     2. Update the enviornment variable follow these [steps](https://github.com/citrix/citrix-k8s-ingress-controller/tree/master/deployment/baremetal).
-     3. Update the ingress class for Citrix Ingress controller with ```sftp``` which is being used in ingress. 
-     4. Deploy the Citrix ingress controller using
-        ```
-         kubectl create -f citrix-k8s-ingress-controller.yaml -n sftp
-        ```
+
 4. Verify configurations has been created on Citrix ADC.
    
    
