@@ -39,35 +39,29 @@ Check the states of CPX and guest book application which we have deployed using
 ```
 will get the output like following.
 
+![](./images/Status.png)
+
 ## **Expose guestbook application using ingress resource**
 
-Now your guestbook application is up and running. Next step is to expose this application for users. 
+Now your guestbook application and CPX is up and running. Next step is to expose this application for users. 
 Citrix ADC is being used here to route the traffic to the guestbook service. Citrix CPX is running as POD in Kubernetes cluster. 
 
-1. Create an ingress for the guestbook application.
-   1. Download the ingress yaml.
-      ```
-      kubectl apply -f  https://raw.githubusercontent.com/janraj/Networking/master/sftp/ingress.yaml
-      ```
+1. Deploy the ingress resource for guestbook application.
+   
+   ```
+      kubectl apply -f  https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/controller/apps/guestbook-ingress.yaml
+   ```
 
-4. Verify configurations has been created on Citrix ADC.
+2. Verify configurations has been created on Citrix ADC.
    
    
    1. Check CS vserver configuration.
 
       ![](./images/csvserver.png)
 
-   2. Check LB vserver configuration.
+   2. Check LB and Servicegroup configuration.
 
       ![](./images/lbvserver.png)
-
-   3. Check Servicegroup configuration.
-
-      ![](./images/servicegroup.png)
-
-   4. Check Monitor configuration.   
-
-      ![](./images/monitor.png)
 
   
 ## **Access the application** 
