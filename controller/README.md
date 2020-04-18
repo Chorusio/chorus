@@ -13,7 +13,6 @@ Citrix CPX is a container based ADC which can be used for load balancing or expo
 1. Deploy an application on Kubernetes cluster  
 2. Citrix ADC as Ingress Device 
 3. Access the  application.
-4. Why Citrix ADC is better choice for loadbalancing?
 
 ## **Deploy guestbook application**
 
@@ -66,18 +65,12 @@ Citrix ADC is being used here to route the traffic to the guestbook service. Cit
   
 ## **Access the application** 
 
-Access the application using the csvserver IP used in the ADC configuration. We can use curl, FileZilla or any such tools.
-   
-![](./images/SFTP_Connection.png)
+Create a host entry for dns resolution for ``` www.guestbook.com X.X.X.X(IP of k8s master node) ``` in hostfile.
+Get NodePort information for cpx-service using ```kubectl describe service cpx-service```.
+Access the application using ```http://www.guestbook.com:NodePort``` from browser which opens guestbook application.
 
-Once  its connected, we can transfer files between local host and server.
-   
-
-## **Why Citrix ADC is better choice for exposing the SFTP service.**
-
-1. Citrix ADC allows you to monitor your service at deep level by checking whether the file present in the service or not. This can be easily set using smart annotation provided [here](https://github.com/citrix/citrix-k8s-ingress-controller/blob/master/docs/configure/annotations.md).
-2. Citrix ADC allows to distribute the traffic to right pod in the right Node which reduces the latency compared to other ADC.
-3. Citrix ADC allows to reach to the service IP (pod) irrespective of which subnet your cluster and Citrix ADC runs. refer [here](https://github.com/citrix/citrix-k8s-node-controller)  
+The application UI looks like below.
+![](./images/guestbook.png)
 
 
   
