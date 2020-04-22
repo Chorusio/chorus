@@ -112,17 +112,30 @@ This section helps to create configurations required on the ingress device for D
 
 <a name="adc"></a>
 ## **4. Tier-1 Configurations**
+   
+- ## **Download the Citrix Ingress Controller yaml**
 
-   As of now, there are no automated configurations available for Tier-1 ADC. We have to make a static configurations on Tier-1 ADC.
+      ```
+       wget https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/dsr/KubernetesConfig/citrix-k8s-ingress-controller.yaml
+      ```
 
-- ### Configure Virtual Server on ADC.
+- ## **Provide following Input for Citrix Ingress Controller**
+	Provide NS_IP, NS_USER and NS_PASSWORD arguments. Please refer [here](https://github.com/citrix/citrix-k8s-node-controller) for more detailed information.
 
-	Use Virtual Server IP as same as the public IP used in ```ingress.citrix.com/frontend-ip:```. 
-
+- ## **Deploy the Citrix Ingress Controller**
 	```
-	add lb vserver v1 any ******  80 -m iptUNNEL
-	add service s1 <cpx-pod-ip> any 80 -usip on
-	bind lb vserver v1 s1
+           kubectl create -f citrix-k8s-ingress-controller.yaml -n dsr
+	```
+
+- ## **Create ingress for CPX-Service**
+
+   Create DSR configuration on Tier-1 ADC by creating ingress resource for the tier-2 cpx. 
+	```
+	wget https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/dsr/KubernetesConfig/vpx-ingress.yaml 
+	```
+	provide the DSR IP/Public IP through which user access your application via ```ingress.citrix.com/frontend-ip:``` annotations. This must be same as what we have given on step 2.
+	```
+     	kubectl apply -f vpx-ingress.yaml  -n dsr
 	```
 
 <a name="test"></a>
