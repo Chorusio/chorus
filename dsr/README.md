@@ -115,9 +115,9 @@ This section helps to create configurations required on the ingress device for D
    
 - ## **Download the Citrix Ingress Controller yaml**
 
-      ```
+	```
           wget https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/dsr/KubernetesConfig/citrix-k8s-ingress-controller.yaml
-      ```
+	```
 
 - ## **Provide following Input for Citrix Ingress Controller**
 
