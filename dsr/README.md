@@ -116,13 +116,15 @@ This section helps to create configurations required on the ingress device for D
 - ## **Download the Citrix Ingress Controller yaml**
 
       ```
-       wget https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/dsr/KubernetesConfig/citrix-k8s-ingress-controller.yaml
+          wget https://raw.githubusercontent.com/Chorusio/NetworkSolutionArchitect/master/dsr/KubernetesConfig/citrix-k8s-ingress-controller.yaml
       ```
 
 - ## **Provide following Input for Citrix Ingress Controller**
-	Provide NS_IP, NS_USER and NS_PASSWORD arguments. Please refer [here](https://github.com/citrix/citrix-k8s-node-controller) for more detailed information.
+
+	Provide NS_IP, NS_USER and NS_PASSWORD arguments. Please refer [here](https://github.com/citrix/citrix-k8s-ingress-controller) for more detailed information.
 
 - ## **Deploy the Citrix Ingress Controller**
+
 	```
            kubectl create -f citrix-k8s-ingress-controller.yaml -n dsr
 	```
