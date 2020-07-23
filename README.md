@@ -1,6 +1,6 @@
-[![Home](artifacts/home.svg)](https://chorusio.github.io/NetworkSolutionArchitect/)
-[![Blog](artifacts/blog.svg)](https://chorusio.github.io/NetworkSolutionArchitect/blog/)
-[![About](artifacts/about.svg)](https://chorusio.github.io/NetworkSolutionArchitect/about/)
+[![Home](artifacts/home.svg)](https://chorusio.github.io/chorusio/)
+[![Blog](artifacts/blog.svg)](https://chorusio.github.io/chorusio/blog/)
+[![About](artifacts/about.svg)](https://chorusio.github.io/chorusio/about/)
 
 
        
