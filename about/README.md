@@ -1,6 +1,7 @@
-[![Home](artifacts/home.svg)](https://chorusio.github.io/NetworkSolutionArchitect/README.md)
-[![Blog](artifacts/blog.svg)](https://chorusio.github.io/NetworkSolutionArchitect/blog/README.md)
-[![About](artifacts/about.svg)](https://chorusio.github.io/NetworkSolutionArchitect/about/README.md)
+[![Home](home.svg)](https://chorusio.github.io/NetworkSolutionArchitect/README.md)
+[![Blog](blog.svg)](https://chorusio.github.io/NetworkSolutionArchitect/blog/README.md)
+[![About](about.svg)](https://chorusio.github.io/NetworkSolutionArchitect/about/README.md)
+[![Contact](contact.svg)](https://goreportcard.com/report/github.com/janraj/citrix-k8s-node-controller)
 
 
        
