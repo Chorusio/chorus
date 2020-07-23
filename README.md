@@ -1,6 +1,6 @@
-[![Home](artifacts/home.svg)](https://chorusio.github.io/NetworkSolutionArchitect/README.md)
-[![Blog](artifacts/blog.svg)](https://chorusio.github.io/NetworkSolutionArchitect/blog/README.md)
-[![About](artifacts/about.svg)](https://chorusio.github.io/NetworkSolutionArchitect/about/README.md)
+[![Home](artifacts/home.svg)](https://chorusio.github.io/NetworkSolutionArchitect/)
+[![Blog](artifacts/blog.svg)](https://chorusio.github.io/NetworkSolutionArchitect/blog/)
+[![About](artifacts/about.svg)](https://chorusio.github.io/NetworkSolutionArchitect/about/)
 
 
        
