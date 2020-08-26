@@ -1,3 +1,4 @@
+[![Header](artifacts/header.svg)](https://chorusio.github.io/chorusio/)
 [![Home](artifacts/home.svg)](https://chorusio.github.io/chorusio/)
 [![Blog](artifacts/blog.svg)](https://chorusio.github.io/chorusio/blog/)
 [![About](artifacts/about.svg)](https://chorusio.github.io/chorusio/about/)
