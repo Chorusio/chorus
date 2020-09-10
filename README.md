@@ -1,4 +1,4 @@
-[![Header](artifacts/header.svg)](https://chorusio.github.io/chorusio/)
+[![Header](artifacts/header.svg)]
 
 
        
