@@ -10,13 +10,13 @@
 
   <text x="150" y="125" font-size="60" text-anchor="middle" fill="Black">Chorus</text>
 
-  <a xlink:href="README.md">
+  <a xlink:href="https://chorusio.github.io/chorus/README.md">
   	<text x="30%" y="100" font-size="20" text-anchor="middle" fill="Black">Home</text>
   </a>
-  <a xlink:href="/blog/README.md">
+  <a xlink:href="https://chorusio.github.io/chorus/blog/README.md">
   	<text x="40%" y="100" font-size="20" text-anchor="middle" fill="Black">Blog</text>
   </a>
-  <a xlink:href="/about/README.md">
+  <a xlink:href="https://chorusio.github.io/chorus/about/README.md">
   	<text x="50%" y="100" font-size="20" text-anchor="middle" fill="Black">About</text>
   </a>
 	
