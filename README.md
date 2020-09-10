@@ -1,4 +1,4 @@
-![Alt text](artifacts/header.svg)
+![Alt text](artifacts/header.svg?sanitize=true)
 
 
        
