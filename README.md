@@ -1,5 +1,5 @@
 ![Alt text](artifacts/header.svg?sanitize=true)
-
+<img src="artifacts/header.svg">
 
        
 Every year around 1.5 million engineers are passing out, India becomes a factory churning out engineers. According to the recent reports hardly 7% of them are employable and the ratio is travelling down as years pass by. Why is that out of many graduates the only a handful of people are employable?
