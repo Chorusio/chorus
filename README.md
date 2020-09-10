@@ -1,4 +1,4 @@
-[![Header](artifacts/header.svg)]
+![Header](artifacts/header.svg)
 
 
        
